@@ -1,0 +1,28 @@
+.brand {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.brandWithImage {
+  gap: 0.5rem;
+}
+
+.brandImage {
+  object-fit: contain;
+}
+
+.imageOnly .brandText {
+  display: none;
+}
+
+.dark .brandText,
+.brandText {
+  color: var(--text-color-dark, #fff);
+}
+
+.light .brandText {
+  color: var(--text-color-light, #000);
+}

@@ -1,0 +1,18 @@
+.themeButton {
+  background-color: transparent;
+}
+
+.themeButton:focus {
+  outline: 2px solid var(--focus-color);
+  outline-offset: 2px;
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.dark.icon {
+  color: var(--text-color-dark);
+  fill: var(--text-color-dark);
+}

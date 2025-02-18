@@ -1,0 +1,41 @@
+.navigationHeading {
+  font-weight: bold;
+}
+
+.header {
+  --navbar-height: 80px;
+
+  position: fixed;
+  background: var(--bg-color-light);
+  width: 100%;
+  padding: 0 2rem;
+  box-shadow: 0 1px 3px rgba(115, 115, 115, 0.5);
+  height: var(--navbar-height);
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.menuAndThemeToggle {
+  display: flex;
+}
+
+.dark.header {
+  background-color: var(--bg-color-dark);
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.dark .icon {
+  color: var(--text-color-dark);
+  fill: var(--text-color-dark);
+}
