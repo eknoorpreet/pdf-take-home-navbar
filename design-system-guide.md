@@ -243,4 +243,4 @@ The Intersection Observer API is a browser native API and is preferred over `Ele
 - Avoid sync jobs
 - Tree shaking (remove dead code)
 - Profiling components/interactions
-- Slowest requests to the server can be prioritized for improvement (by examining latency data for each API call) (Source: [Lyft's Engineering Blog](https://eng.lyft.com/building-accessible-web-experiences-at-lyft-185ad9328c6f)
+- Slowest requests to the server can be prioritized for improvement (by examining latency data for each API call) (Source: [Lyft's Engineering Blog](https://eng.lyft.com/building-accessible-web-experiences-at-lyft-185ad9328c6f))
