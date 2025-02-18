@@ -137,6 +137,12 @@ The following are the considerations:
 
 # 3. Optimizing performance in a data-heavy application (Bonus)
 
+## Minimize Re-renders
+
+- Use `React.memo()` to prevent unnecessary re-renders of individual menu items.
+- Use `useCallback()` for functions that don’t need to be re-created on every render.
+- Use `useMemo()` to cache computed values (e.g., filtered or sorted menu items).
+
 ## List virtualization
 
 If the menu contains thousands of items, rendering that many DOM nodes would cost lots of memory and slow down the browser.
@@ -161,7 +167,9 @@ This will improve rendering performance in terms of:
 
 - **Virtual DOM reconciliation (React-specific):** Since the post is now a simpler empty version, it's easier for React (the UI library that Facebook is using to render the feed) to diff the virtual DOM vs the real DOM to determine what DOM updates have to be made.
 
-Source: https://engineering.fb.com/2020/05/08/web/facebook-redesign/
+This can be achieved using via `react-window` (https://github.com/bvaughn/react-window) or `react-virtualized` (https://github.com/bvaughn/react-virtualized)
+
+Source: [Facebook's Engineering Blog](https://engineering.fb.com/2020/05/08/web/facebook-redesign/)
 
 ## Rendering
 
@@ -234,3 +242,5 @@ The Intersection Observer API is a browser native API and is preferred over `Ele
 - Use server to do expensive computations
 - Avoid sync jobs
 - Tree shaking (remove dead code)
+- Profiling components/interactions
+- Slowest requests to the server can be prioritized for improvement (by examining latency data for each API call) (Source: [Lyft's Engineering Blog](https://eng.lyft.com/building-accessible-web-experiences-at-lyft-185ad9328c6f)
