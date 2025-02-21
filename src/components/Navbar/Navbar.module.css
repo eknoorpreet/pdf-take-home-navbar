@@ -3,14 +3,12 @@
 }
 
 .header {
-  --navbar-height: 80px;
-
   position: fixed;
-  background: var(--bg-color-light);
+  background: var(--color-background-light);
   width: 100%;
-  padding: 0 2rem;
-  box-shadow: 0 1px 3px rgba(115, 115, 115, 0.5);
-  height: var(--navbar-height);
+  padding: 0 var(--space-xl);
+  box-shadow: var(--shadow-navbar);
+  height: var(--height-navbar);
   display: flex;
   align-items: center;
 }
@@ -24,18 +22,19 @@
 
 .menuAndThemeToggle {
   display: flex;
+  gap: var(--space-md);
 }
 
 .dark.header {
-  background-color: var(--bg-color-dark);
+  background-color: var(--color-background-dark);
 }
 
 .icon {
-  width: 2rem;
-  height: 2rem;
+  width: var(--space-xl);
+  height: var(--space-xl);
 }
 
 .dark .icon {
-  color: var(--text-color-dark);
-  fill: var(--text-color-dark);
+  color: var(--color-text-dark);
+  fill: var(--color-text-dark);
 }

@@ -10,7 +10,6 @@ import { useState } from 'react';
 const navLinks = [
   { name: 'Home', path: '/' },
   { name: 'About', path: '/about' },
-  //   { name: 'Pricing', path: '/pricing' },
   { name: 'Contact', path: '/contact' },
 ];
 
@@ -22,18 +21,6 @@ function App() {
         theme={theme}
         setTheme={setTheme}
         navLinks={navLinks}
-        themeConfig={{
-          light: {
-            text: '#1a1a1a',
-            background: '#ffffff',
-          },
-          dark: {
-            text: '#ffffff',
-            background: '#1a1a1a',
-          },
-          active: '#38bdf8',
-          focus: '#4d90fe',
-        }}
         logo={{
           src: '/logo.png',
           alt: 'PBS Logo',

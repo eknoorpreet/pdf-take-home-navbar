@@ -2,12 +2,12 @@
   display: inline-flex;
   align-items: center;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 1.25rem;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-lg);
 }
 
 .brandWithImage {
-  gap: 0.5rem;
+  gap: var(--space-md);
 }
 
 .brandImage {
@@ -20,9 +20,9 @@
 
 .dark .brandText,
 .brandText {
-  color: var(--text-color-dark, #fff);
+  color: var(--color-text-dark);
 }
 
 .light .brandText {
-  color: var(--text-color-light, #000);
+  color: var(--color-text-light);
 }

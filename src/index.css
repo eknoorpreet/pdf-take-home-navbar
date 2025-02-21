@@ -1,19 +1,66 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* Color System */
+  --color-brand-primary: #38bdf8;
+  --color-brand-focus: #4d90fe;
+  --color-link-hover-light: #747bff;
+  --color-button-hover: #646cff;
 
+  /* Typography */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --line-height-base: 1.5;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.25rem;
+
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /* --active-link-color: #38bdf8;
-  --text-color-light: #000;
-  --text-color-dark: #fff;
-  --bg-color-light: #fff;
-  --bg-color-dark: #000;
-  --focus-color: #4d90fe; */
+  /* Light Theme Colors */
+  --color-text-light: #000;
+  --color-background-light: #fff;
+  --color-body-text-light: #213547;
+  --color-button-background-light: #f9f9f9;
+
+  /* Dark Theme Colors */
+  --color-text-dark: #fff;
+  --color-background-dark: #000;
+  --color-surface-elevated-dark: #222;
+
+  /* Spacing Scale */
+  --space-xs: 0.2rem;
+  --space-sm: 0.4rem;
+  --space-md: 0.5rem;
+  --space-lg: 1rem;
+  --space-xl: 2rem;
+
+  /* Layout */
+  --width-max-content: 1280px;
+  --width-min-body: 320px;
+  --width-mobile-menu: 50%;
+  --height-navbar: 80px;
+
+  /* Borders */
+  --border-radius-md: 8px;
+  --border-width-thin: 1px;
+  --border-width-focus: 2px;
+  --border-width-outline: 4px;
+
+  /* Shadows */
+  --shadow-navbar: 0 1px 3px rgba(115, 115, 115, 0.5);
+
+  /* Animation */
+  --transition-duration-short: 0.25s;
+  --transition-duration-medium: 0.5s;
+  --transition-easing-default: ease-in-out;
+
+  /* Focus Styles */
+  --focus-outline: 2px solid var(--color-brand-focus);
+  --focus-outline-offset: 2px;
 }
 
 * {
@@ -22,6 +69,7 @@
   box-sizing: border-box;
 }
 
+/* Default styles */
 body {
   min-width: 320px;
   min-height: 100vh;
@@ -42,10 +90,10 @@ button:hover {
   border-color: #646cff;
 }
 
-button:focus,
+/* button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
+} */
 
 .dark {
   background-color: #222;

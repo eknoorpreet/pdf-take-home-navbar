@@ -2,17 +2,12 @@
   background-color: transparent;
 }
 
-.themeButton:focus {
-  outline: 2px solid var(--focus-color);
-  outline-offset: 2px;
-}
-
 .icon {
-  width: 2rem;
-  height: 2rem;
+  width: var(--space-xl);
+  height: var(--space-xl);
 }
 
 .dark.icon {
-  color: var(--text-color-dark);
-  fill: var(--text-color-dark);
+  color: var(--color-text-dark);
+  fill: var(--color-text-dark);
 }

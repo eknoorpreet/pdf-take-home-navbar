@@ -1,20 +1,20 @@
 .menuButton {
   display: block;
-  background: var(--bg-color-light);
-  color: var(--text-color-light);
+  background: var(--color-background-light);
+  color: var(--color-text-light);
 }
 
 .dark .menuButton {
-  background: var(--bg-color-dark);
+  background: var(--color-background-dark);
 }
 
 .dark .menuButton .icon {
-  fill: var(--text-color-dark);
+  fill: var(--color-text-dark);
 }
 
 .menuButton:focus {
-  outline: 2px solid var(--focus-color);
-  outline-offset: 2px;
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-outline-offset);
 }
 
 @media (min-width: 768px) {
@@ -24,11 +24,11 @@
 }
 
 .icon {
-  width: 2rem;
-  height: 2rem;
+  width: calc(var(--space-xl));
+  height: calc(var(--space-xl));
 }
 
 .dark .icon {
-  color: var(--text-color-dark);
-  fill: var(--text-color-dark);
+  color: var(--color-text-dark);
+  fill: var(--color-text-dark);
 }

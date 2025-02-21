@@ -14,18 +14,6 @@ export default function Navbar({
   theme,
   setTheme,
   mobileBreakpoint = 768,
-  themeConfig = {
-    light: {
-      text: '#000',
-      background: '#fff',
-    },
-    dark: {
-      text: '#fff',
-      background: '#000',
-    },
-    active: '#38bdf8',
-    focus: '#4d90fe',
-  },
   logo = null,
   onNavItemClick,
 }) {
@@ -39,41 +27,6 @@ export default function Navbar({
   }, []);
 
   // Set custom colors here dynamically instead of hard-coding in the CSS
-  const setCustomColors = useCallback(() => {
-    const { light, dark, active, focus } = themeConfig;
-
-    // Light theme colors
-    document.documentElement.style.setProperty(
-      '--active-link-color-light',
-      active
-    );
-    document.documentElement.style.setProperty(
-      '--text-color-light',
-      light.text
-    );
-    document.documentElement.style.setProperty(
-      '--bg-color-light',
-      light.background
-    );
-
-    // Dark theme colors
-    document.documentElement.style.setProperty(
-      '--active-link-color-dark',
-      active
-    );
-    document.documentElement.style.setProperty('--text-color-dark', dark.text);
-    document.documentElement.style.setProperty(
-      '--bg-color-dark',
-      dark.background
-    );
-
-    // Common color
-    document.documentElement.style.setProperty('--focus-color', focus);
-  }, [themeConfig]);
-
-  useEffect(() => {
-    setCustomColors();
-  }, [setCustomColors]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);

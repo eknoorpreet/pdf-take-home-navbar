@@ -43,6 +43,67 @@ const navLinks = [
 />;
 ```
 
+## Design Tokens
+
+```css
+/* Color System */
+--color-brand-primary: #38bdf8;
+--color-brand-focus: #4d90fe;
+--color-link-hover-light: #747bff;
+--color-button-hover: #646cff;
+
+/* Light Theme Colors */
+--color-text-light: #000;
+--color-background-light: #fff;
+--color-body-text-light: #213547;
+--color-button-background-light: #f9f9f9;
+
+/* Dark Theme Colors */
+--color-text-dark: #fff;
+--color-background-dark: #000;
+--color-surface-elevated-dark: #222;
+
+/* Typography */
+--font-weight-regular: 400;
+--font-weight-medium: 500;
+--font-weight-semibold: 600;
+--font-weight-bold: 700;
+--line-height-base: 1.5;
+--font-size-base: 1rem;
+--font-size-lg: 1.25rem;
+
+/* Spacing Scale */
+--space-xs: 0.2rem;
+--space-sm: 0.4rem;
+--space-md: 0.5rem;
+--space-lg: 1rem;
+--space-xl: 2rem;
+
+/* Layout */
+--width-max-content: 1280px;
+--width-min-body: 320px;
+--width-mobile-menu: 50%;
+--height-navbar: 80px;
+
+/* Borders */
+--border-radius-md: 8px;
+--border-width-thin: 1px;
+--border-width-focus: 2px;
+--border-width-outline: 4px;
+
+/* Shadows */
+--shadow-navbar: 0 1px 3px rgba(115, 115, 115, 0.5);
+
+/* Animation */
+--transition-duration-short: 0.25s;
+--transition-duration-medium: 0.5s;
+--transition-easing-default: ease-in-out;
+
+/* Focus Styles */
+--focus-outline: 2px solid var(--color-brand-focus);
+--focus-outline-offset: 2px;
+```
+
 ## Props & State Variations:
 
 ### Props
@@ -54,7 +115,6 @@ const navLinks = [
 | `theme`            | `string`   | `undefined`                                                                | The current theme (`'light'` or `'dark'`).                                            |
 | `setTheme`         | `function` | `undefined`                                                                | Function to toggle the theme.                                                         |
 | `mobileBreakpoint` | `number`   | `768`                                                                      | The screen width (in pixels) at which the navbar switches to mobile mode.             |
-| `themeConfig`      | `object`   | Custom theme object                                                        | An object defining color configurations for light and dark themes.                    |
 | `logo`             | `object`   | `null`                                                                     | Logo object containing `src`, `alt`, and `placement`.                                 |
 | `onNavItemClick`   | `function` | A callback function that gets triggered when a navigation item is clicked. | `undefined`                                                                           |
 
