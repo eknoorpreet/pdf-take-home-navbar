@@ -165,6 +165,7 @@ const navLinks = [
 - Adding animations for smoother transitions
 - More color schemes
 - Handling large menus efficiently with virtualization (discussed below)
+- Persisting selected theme using `localStorage`
 
 # 2. Scalability & Maintainability
 

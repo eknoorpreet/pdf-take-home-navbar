@@ -16,5 +16,5 @@
 }
 
 .dark {
-  background-color: #222;
+  background-color: var(--color-background-dark);
 }
