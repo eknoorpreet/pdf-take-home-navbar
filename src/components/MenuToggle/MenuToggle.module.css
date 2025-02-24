@@ -4,12 +4,9 @@
   color: var(--color-text-light);
 }
 
-.dark .menuButton {
+.dark.menuButton {
   background: var(--color-background-dark);
-}
-
-.dark .menuButton .icon {
-  fill: var(--color-text-dark);
+  color: var(--color-text-dark);
 }
 
 .menuButton:focus {
@@ -17,18 +14,13 @@
   outline-offset: var(--focus-outline-offset);
 }
 
-@media (min-width: 768px) {
-  .menuButton {
-    display: none;
-  }
-}
-
 .icon {
   width: calc(var(--space-xl));
   height: calc(var(--space-xl));
 }
 
-.dark .icon {
-  color: var(--color-text-dark);
-  fill: var(--color-text-dark);
+@media (min-width: 768px) {
+  .menuButton {
+    display: none;
+  }
 }

@@ -4,8 +4,8 @@ import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
 
+import { ThemeContextProvider } from './context/ThemeContext';
 import styles from './App.module.css';
-import { useState } from 'react';
 
 const navLinks = [
   { name: 'Home', path: '/' },
@@ -14,27 +14,26 @@ const navLinks = [
 ];
 
 function App() {
-  const [theme, setTheme] = useState('light');
   return (
-    <BrowserRouter>
-      <Navbar
-        theme={theme}
-        setTheme={setTheme}
-        navLinks={navLinks}
-        logo={{
-          src: '/logo.png',
-          alt: 'PBS Logo',
-          placement: 'left',
-        }}
-      />
-      <div className={`${styles.container} ${styles[theme]}`}>
-        <Routes>
-          <Route path='/' element={<Home theme={theme} />} />
-          <Route path='/about' element={<About theme={theme} />} />
-          <Route path='/contact' element={<Contact theme={theme} />} />
-        </Routes>
-      </div>
-    </BrowserRouter>
+    <ThemeContextProvider>
+      <BrowserRouter>
+        <Navbar
+          navLinks={navLinks}
+          logo={{
+            src: '/logo.png',
+            alt: 'PBS Logo',
+            placement: 'left',
+          }}
+        />
+        <div className={styles.container}>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/contact' element={<Contact />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </ThemeContextProvider>
   );
 }
 

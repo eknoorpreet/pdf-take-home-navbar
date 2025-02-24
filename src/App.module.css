@@ -12,9 +12,7 @@
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  transition: 0.5s;
-}
-
-.dark {
-  background-color: var(--color-background-dark);
+  background: var(--bg-color);
+  color: var(--text-color);
+  /* transition: var(--transition-duration-medium); */
 }

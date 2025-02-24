@@ -1,7 +1,8 @@
 import { BrowserRouter } from 'react-router-dom';
 import { Home, Settings, User } from 'lucide-react';
-import Navbar from './Navbar';
 import { useState } from 'react';
+import Navbar from './Navbar';
+import { ThemeContextProvider } from '../../context/ThemeContext'; // Added ThemeContextProvider
 
 export default {
   title: 'Components/Navbar',
@@ -78,17 +79,18 @@ const defaultNavLinks = [
 
 // Template for all stories
 const Template = (args) => {
-  const [theme, setTheme] = useState(args.theme || 'light');
   return (
-    <div
-      style={{
-        height: '200vh',
-        width: '100vw',
-        overflowX: 'hidden',
-      }}
-    >
-      <Navbar {...args} theme={theme} setTheme={setTheme} />
-    </div>
+    <ThemeContextProvider>
+      <div
+        style={{
+          height: '200vh',
+          width: '100vw',
+          overflowX: 'hidden',
+        }}
+      >
+        <Navbar {...args} />
+      </div>
+    </ThemeContextProvider>
   );
 };
 

@@ -15,8 +15,8 @@
   bottom: 0;
   padding: var(--space-xl);
   width: var(--width-mobile-menu);
-  transform: translateX(100%);
-  transition: transform 0.5s ease-in-out;
+  /* transform: translateX(100%); */
+  /* transition: transform var(--transition-duration-medium) ease-in-out; */
   border-left: 1px solid rgba(115, 115, 115, 0.5);
 }
 

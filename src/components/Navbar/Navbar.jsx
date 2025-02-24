@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useViewportSize } from '@mantine/hooks';
 
 import { Brand } from '../Brand/Brand';
@@ -6,19 +6,19 @@ import NavList from '../NavList/NavList';
 import { MenuToggle } from '../MenuToggle/MenuToggle';
 import ThemeToggle from '../ThemeToggle/ThemeToggle';
 
+import { useTheme } from '../../context/ThemeContext';
 import styles from './Navbar.module.css';
 
 export default function Navbar({
   brandName = 'PBS',
   navLinks = [],
-  theme,
-  setTheme,
   mobileBreakpoint = 768,
   logo = null,
   onNavItemClick,
 }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isHydrated, setIsHydrated] = useState(false);
+  const { theme, toggleTheme } = useTheme();
   const { width } = useViewportSize();
   const isMobile = isHydrated && width < mobileBreakpoint; // Only determine mobile state after hydration
 
@@ -26,14 +26,8 @@ export default function Navbar({
     setIsHydrated(true);
   }, []);
 
-  // Set custom colors here dynamically instead of hard-coding in the CSS
-
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-  };
-
-  const toggleTheme = () => {
-    theme === 'light' ? setTheme('dark') : setTheme('light');
   };
 
   const closeMenuOnMobile = () => {
@@ -69,7 +63,11 @@ export default function Navbar({
         />
         <div className={styles.menuAndThemeToggle}>
           {navLinks.length !== 0 && (
-            <MenuToggle isOpen={isMenuOpen} onClick={toggleMenu} />
+            <MenuToggle
+              isOpen={isMenuOpen}
+              onClick={toggleMenu}
+              theme={theme}
+            />
           )}
           <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
         </div>
