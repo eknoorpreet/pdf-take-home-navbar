@@ -6,11 +6,13 @@
 
 The `Navbar` component is a responsive navigation bar designed for web applications. It supports:
 
-- Branding with a `brandName`
+- Branding (with a `brandName`)
 
 - Dynamic navigation links (`navLinks` array)
 
 - Light and dark themes
+
+- Persist selected theme (via `localStorage`)
 
 - Currently active link
 
@@ -112,8 +114,7 @@ const navLinks = [
 | ------------------ | ---------- | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
 | `brandName`        | `string`   | `'PBS'`                                                                    | The name of the brand displayed in the navbar.                                        |
 | `navLinks`         | `array`    | `[]`                                                                       | An array of navigation links, each containing `name`, `path`, and an optional `icon`. |
-| `theme`            | `string`   | `undefined`                                                                | The current theme (`'light'` or `'dark'`).                                            |
-| `setTheme`         | `function` | `undefined`                                                                | Function to toggle the theme.                                                         |
+|                    |
 | `mobileBreakpoint` | `number`   | `768`                                                                      | The screen width (in pixels) at which the navbar switches to mobile mode.             |
 | `logo`             | `object`   | `null`                                                                     | Logo object containing `src`, `alt`, and `placement`.                                 |
 | `onNavItemClick`   | `function` | A callback function that gets triggered when a navigation item is clicked. | `undefined`                                                                           |
@@ -158,14 +159,14 @@ const navLinks = [
 - You can place the logo to either side of the brand name.
 - Easily extendable with new props for colors.
 - Supports external styling via CSS modules.
-- You can add a custom click handler for the links.
+- You can add a custom click handler for the links. This functionality can be used to render dropdowns.
+- Local storage is being used to persist the theme selected by the user.
 
 ### Future Enhancements
 
 - Adding animations for smoother transitions
 - More color schemes
 - Handling large menus efficiently with virtualization (discussed below)
-- Persisting selected theme using `localStorage`
 
 # 2. Scalability & Maintainability
 
@@ -178,7 +179,7 @@ The following are the considerations:
 - Customization: Props like `brandName`, `navLinks`, `logo` and theme-related colors allow developers to adapt it without modifying internal logic. Furthermore, `onNavItemClick` prop allows developers to pass in custom functions to the component.
 - Responsiveness: Using `mobileBreakpoint` ensures appropriate behavior across different screen sizes.
 - Accessibility: Features like keyboard navigation (`Escape` key handling), focus indicators, and ARIA attributes ensure usability for all users.
-- State Management: The `isMenuOpen` state provides a clear separation of concerns, making mobile menu handling predictable.
+- State Management: Ultimately, the application will have more components, which is why, the theming is handled via context to avoid prop drilling. Furthermore, the `isMenuOpen` state provides a clear separation of concerns, making mobile menu handling predictable.
 
 ## Managing Long-term Maintenance
 
