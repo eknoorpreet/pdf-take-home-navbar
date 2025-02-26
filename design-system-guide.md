@@ -160,7 +160,6 @@ const navLinks = [
 - You can add text-only, icon-only, or a mix of text and icon links.
 - You can add text-only, logo-only, or a mix of text and logo as the brand name.
 - You can place the logo to either side of the brand name.
-- Easily extendable with new props for colors.
 - Supports external styling via CSS modules.
 - You can add a custom click handler for the links. This functionality can be used to render dropdowns.
 - Local storage is being used to persist the theme selected by the user.
