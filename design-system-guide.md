@@ -40,8 +40,11 @@ const navLinks = [
 <Navbar
   brandName='PDF Solutions'
   navLinks={navLinks}
-  theme={theme}
-  setTheme={setTheme}
+  logo={{
+    src: '/logo.png',
+    alt: 'PBS Logo',
+    placement: 'left',
+  }}
 />;
 ```
 
